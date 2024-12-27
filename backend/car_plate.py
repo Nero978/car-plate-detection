@@ -259,7 +259,7 @@ def get_plate(video_path):
 
     if len(plate_dict) == 0:
         print('No plate detected.')
-        exit(1)
+        return None
 
     max_plate = max(plate_dict, key=plate_dict.get)
 
