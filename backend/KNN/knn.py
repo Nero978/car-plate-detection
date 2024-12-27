@@ -4,6 +4,40 @@ import cv2
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 import sys
+
+province_map = {
+  'beijing': '京',
+    'tianjin': '津',
+    'hebei': '冀',
+    'shanxi': '晋',
+    'neimenggu': '蒙',
+    'liaoning': '辽',
+    'jilin': '吉',
+    'heilongjiang': '黑',
+    'shanghai': '沪',
+    'jiangsu': '苏',
+    'zhejiang': '浙',
+    'anhui': '皖',
+    'fujian': '闽',
+    'jiangxi': '赣',
+    'shandong': '鲁',
+    'henan': '豫',
+    'hubei': '鄂',
+    'hunan': '湘',
+    'guangdong': '粤',
+    'guangxi': '桂',
+    'hainan': '琼',
+    'chongqing': '渝',
+    'sichuan': '川',
+    'guizhou': '贵',
+    'yunnan': '云',
+    'xizang': '藏',
+    'shan': '陕',
+    'gansu': '甘',
+    'qinghai': '青',
+    'ningxia': '宁',
+    'xinjiang': '新',
+}
     
 # 加载数据
 def load_data(data_dir):
