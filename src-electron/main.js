@@ -18,13 +18,13 @@ const createWindow = () => {
 
   win.loadURL('http://localhost:5000')
   // development模式
-  if (process.env.VITE_DEV_SERVER_URL) {
-    win.loadURL(process.env.VITE_DEV_SERVER_URL)
-    // 开启调试台
-    win.webContents.openDevTools()
-  } else {
-    win.loadFile(join(__dirname, '../dist/index.html'))
-  }
+  // if (process.env.VITE_DEV_SERVER_URL) {
+  //   win.loadURL(process.env.VITE_DEV_SERVER_URL)
+  //   // 开启调试台
+  //   win.webContents.openDevTools()
+  // } else {
+  //   win.loadFile(join(__dirname, '../dist/index.html'))
+  // }
 }
 
 // Electron 会在初始化后并准备
