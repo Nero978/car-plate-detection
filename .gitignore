@@ -36,5 +36,3 @@ media
 
 **/__pycache__/
 dist-electron
-
-**/data/
