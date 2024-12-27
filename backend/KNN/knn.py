@@ -3,11 +3,16 @@ import numpy as np
 import cv2
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
+import sys
 
 # 加载数据
 def load_data(data_dir):
     images = []
     labels = []
+
+    # 确保Python使用UTF-8编码
+    if sys.platform == "win32":
+        os.environ["PYTHONIOENCODING"] = "utf-8"
     
     # 遍历 model 文件夹中的每个子文件夹（每个子文件夹代表一个字符标签）
     for label in os.listdir(data_dir):
