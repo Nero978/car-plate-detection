@@ -141,7 +141,11 @@ def predict_character(img, index):
     
     # 使用 KNN 模型进行预测
     predicted_label = knn.predict(img_flattened)
-    return predicted_label[0]
+
+    if index == 0:
+        return province_map[predicted_label[0]]
+    else:
+        return predicted_label[0]
 
 # 测试预测函数
 # test_img_path = '/Users/chrisliu/bjfu/2024 DV/课程设计/code/backend/KNN/data/0/4-3.jpg'  # 测试图像路径
