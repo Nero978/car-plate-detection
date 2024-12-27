@@ -6,7 +6,12 @@ from sklearn.model_selection import train_test_split
 import sys
 
 def cv2_imread(file_path):
-    cv_img = cv2.imdecode(np.fromfile(file_path, dtype=np.uint8), -1)
+    root_dir, file_name = os.path.split(file_path)
+    pwd = os.getcwd()
+    if root_dir:
+        os.chdir(root_dir)
+    cv_img = cv2.imread(file_name, cv2.IMREAD_GRAYSCALE)
+    os.chdir(pwd)
     return cv_img
     
 # 加载数据
