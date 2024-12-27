@@ -6,7 +6,7 @@
 
  # 技术栈
 - 前端：Electron + Vue3 + Vite + TDesign Vue Next
-- 后端：Python + Flask
+- 后端：Python + Flask + OpenCV
 
 # 环境配置
 - Python 3.11+
