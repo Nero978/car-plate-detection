@@ -4,12 +4,6 @@ import cv2
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 import sys
-
-def cv_imread(filePath):
-    cv_img=cv2.imdecode(np.fromfile(filePath,dtype=np.uint8),-1)
-    ## imdecode读取的是rgb，如果后续需要opencv处理的话，需要转换成bgr，转换后图片颜色会变化
-    cv_img=cv2.cvtColor(cv_img,cv2.COLOR_RGB2BGR)
-    return cv_img
     
 # 加载数据
 def load_data(data_dir):
@@ -25,11 +19,7 @@ def load_data(data_dir):
                 img_path = os.path.join(label_path, img_file)
                 
                 # 读取图像，并将其转换为固定大小的 20x20 图像（假设字符图像大小一致）
-                img = None
-                if sys.platform == 'win32':
-                    img = cv_imread(img_path)
-                else:
-                    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+                img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
 
                 # img_resized = cv2.resize(img, (20, 20))  # 重设大小为 20x20
                 
