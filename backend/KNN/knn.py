@@ -39,7 +39,7 @@ def load_data(data_dir):
 
 def train_knn(type):
     # 加载训练数据
-    data_dir = 'backend/KNN/data/' + type  # 训练数据存放的路径
+    data_dir = os.path.join(os.path.dirname(__file__), 'data', type)  # 训练数据存放的路径
     X, y = load_data(data_dir)
 
     # 3. 分割数据集为训练集和测试集
