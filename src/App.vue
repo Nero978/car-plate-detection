@@ -153,6 +153,8 @@ function uploadVideo(file) {
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .card:last-child {
