@@ -5,14 +5,14 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 import sys
 
+def cv2_imread(file_path):
+    cv_img = cv2.imdecode(np.fromfile(file_path, dtype=np.uint8), -1)
+    return cv_img
+    
 # 加载数据
 def load_data(data_dir):
     images = []
     labels = []
-
-    # 确保Python使用UTF-8编码
-    if sys.platform == "win32":
-        os.environ["PYTHONIOENCODING"] = "utf-8"
     
     # 遍历 model 文件夹中的每个子文件夹（每个子文件夹代表一个字符标签）
     for label in os.listdir(data_dir):
@@ -23,7 +23,12 @@ def load_data(data_dir):
                 img_path = os.path.join(label_path, img_file)
                 
                 # 读取图像，并将其转换为固定大小的 20x20 图像（假设字符图像大小一致）
-                img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)  # 读取为灰度图
+                img = None
+                if sys.platform == 'win32':
+                    img = cv2_imread(img_path)
+                else:
+                    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+
                 # img_resized = cv2.resize(img, (20, 20))  # 重设大小为 20x20
                 
                 # 二值化处理（如果数据已经是二值化的，可以省略这一步）
