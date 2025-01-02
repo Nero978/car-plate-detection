@@ -23,9 +23,9 @@ git clone https://github.com/Nero978/car-plate-detection.git
 cd car-plate-detection
 vitualenv venv
 # 激活虚拟环境(MacOS/Linux)
-source env/bin/activate
+source venv/bin/activate
 # 激活虚拟环境(Windows)
-.\env\Scripts\activate.ps1
+.\venv\Scripts\activate.ps1
 ```
 > 在 VSCode 或 PyCharm 中直接打开项目，然后在 IDE 中启动终端，IDE 会自动激活虚拟环境
 
